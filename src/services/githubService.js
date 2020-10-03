@@ -5,20 +5,29 @@ const axiosConfig = {
   baseURL: 'https://api.github.com/',
   auth: {
     username: process.env.GITHUB_CLIENT_ID,
-    password: process.env.GITHUB_CLIENT_SECRET
-  }
+    password: process.env.GITHUB_CLIENT_SECRET,
+  },
 }
 
 function searchRepos(searchText, language) {
   const query = language ? `${searchText}+language:${language}` : searchText
 
   if (!process.browser) {
-    return axios.get('search/repositories?q=${query}&sort=stars&order=desc', axiosConfig)
+    return axios.get(
+      'search/repositories?q=${query}&sort=stars&order=desc',
+      axiosConfig,
+    )
   }
 
-  return axiosGetCancellable(
-    `api/search?q=${query}&sort=stars&order=desc`
-  )
+  return axiosGetCancellable(`api/search?q=${query}&sort=stars&order=desc`)
 }
 
-export default searchRepos
+function getRepo(id) {
+  return axios.get(`repositories/${id}`, axiosConfig)
+}
+
+function getProfile(username) {
+  return axios.get(`users/${username}`, axiosConfig)
+}
+
+export default { searchRepos, getRepo, getProfile }

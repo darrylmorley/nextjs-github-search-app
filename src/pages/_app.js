@@ -1,10 +1,13 @@
 import '../scss/styles.scss'
+import Nav from '../components/Nav'
 
 function MyApp({ Component, pageProps }) {
   return (
     <div>
       <Nav />
-      <Component {...pageProps} />
+      <div className="page">
+        <Component {...pageProps} />
+      </div>
     </div>
   )
 }

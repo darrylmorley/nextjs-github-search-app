@@ -4,7 +4,7 @@ import searchRepos from '../services/githubService'
 import RepoList from '../components/RepoList'
 import search from './api/search'
 import getRandomWord from '../helpers/randowWord.helper'
-import '../scss/styles.scss'
+import styles from './index.module.scss'
 
 const Index = (props) => {
   const [searchText, setSearchText] = useState(props.searchText)
@@ -31,11 +31,11 @@ const Index = (props) => {
       setLoading(false)
       setRepos(res.data.items)
     }
-
   }
 
   return (
-    <div>
+    <div className={styles.container}>
+      <img src="/img/undraw-process.png" alt="" className={styles.logo} />
       <Search
         searchText={searchText}
         language={language}
@@ -54,8 +54,8 @@ export const getServerSideProps = async () => {
   return {
     props: {
       searchText: searchText,
-      repos: res.data.items
-    }
+      repos: res.data.items,
+    },
   }
 }
 
