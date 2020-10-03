@@ -1,5 +1,15 @@
 function getRandomWord() {
-  const words = ['pizza', 'mario', 'penguin']
+  const words = [
+    'linux',
+    'react',
+    'vue',
+    'windows',
+    'nextjs',
+    'babel',
+    'webpack',
+    'mac',
+    'javascript',
+  ]
 
   return words[Math.floor(Math.random() * words.length)]
 }
