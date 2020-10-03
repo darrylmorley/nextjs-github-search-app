@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './buttonLink.module.scss'
+import Link from 'next/link'
 
 const buttonLink = ({ href, text, type = 'primary', target, external }) => {
   const types = {
@@ -23,7 +24,7 @@ const buttonLink = ({ href, text, type = 'primary', target, external }) => {
   }
 
   return (
-    <div>
+    <div className={styles.button}>
       <Link href={href}>
         <a className={buttonClass} target={target}>
           {text}

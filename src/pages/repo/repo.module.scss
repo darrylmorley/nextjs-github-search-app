@@ -1,0 +1,22 @@
+@import '../../scss/colors.scss';
+
+.header {
+  margin-bottom: 20px;
+
+  span {
+    font-weight: 700;
+    font-size: 30px;
+    background: $app-light-grey;
+  }
+}
+
+.description {
+  padding-bottom: 20px;
+}
+
+.language {
+  font-weight: 500;
+  color: $app-dark-green;
+  font-size: 24px;
+  padding-bottom: 15px;
+}

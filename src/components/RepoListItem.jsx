@@ -6,7 +6,7 @@ import UserAvatar from '../components/UserAvatar'
 
 const RepoListItem = ({ repo }) => {
   const cutDescription = (description) => {
-    if (description.length > 100) {
+    if (description && description.length > 100) {
       return description.slice(0, 100) + '...'
     }
 

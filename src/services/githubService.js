@@ -30,4 +30,4 @@ function getProfile(username) {
   return axios.get(`users/${username}`, axiosConfig)
 }
 
-export default { searchRepos, getRepo, getProfile }
+export { searchRepos, getRepo, getProfile }

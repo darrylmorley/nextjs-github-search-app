@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 import Search from '../components/Search'
-import searchRepos from '../services/githubService'
+import { searchRepos } from '../services/githubService'
 import RepoList from '../components/RepoList'
 import search from './api/search'
 import getRandomWord from '../helpers/randowWord.helper'
 import styles from './index.module.scss'
 
 const Index = (props) => {
+  console.log(props)
   const [searchText, setSearchText] = useState(props.searchText)
   const [language, setLanguage] = useState('')
   const [repos, setRepos] = useState(props.repos)
@@ -35,7 +36,6 @@ const Index = (props) => {
 
   return (
     <div className={styles.container}>
-      <img src="/img/undraw-process.png" alt="" className={styles.logo} />
       <Search
         searchText={searchText}
         language={language}
