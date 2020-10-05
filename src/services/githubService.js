@@ -14,7 +14,7 @@ function searchRepos(searchText, language) {
 
   if (!process.browser) {
     return axios.get(
-      'search/repositories?q=${query}&sort=stars&order=desc',
+      `search/repositories?q=${query}&sort=stars&order=desc`,
       axiosConfig,
     )
   }
